@@ -11,7 +11,7 @@ class SongController extends GetxController {
   @override
   void onInit() async {
     super.onInit();
-    song = await songService.getSong('1');
+    song = await songService.getSong('2');
     print(song);
   }
 

@@ -30,9 +30,11 @@ class LoginView extends GetView<LoginController> {
                   onPressed: () => Get.toNamed('/song'),
                   child: Text('Go to Song')),
               ElevatedButton(
-                  onPressed: () => Get.toNamed('/songs_list'),
+                  onPressed: () => Get.toNamed('/songs-list'),
                   child: Text('Songs')),
-              ElevatedButton(onPressed: null, child: Text('Sign Up')),
+              ElevatedButton(
+                  onPressed: () => Get.toNamed('/session'),
+                  child: Text('Session')),
             ],
           ),
         ),

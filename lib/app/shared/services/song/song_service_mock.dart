@@ -17,4 +17,23 @@ class SongServiceMock extends SongServiceInterface {
       return null;
     }
   }
+
+  @override
+  Future<List<Song>> getSongs() async {
+    // get all songs from json files
+
+    int numSongs = 2;
+
+    try {
+      List<Song> songs = [];
+      for (int i = 1; i <= numSongs; i++) {
+        String jsonString = await rootBundle.loadString('assets/songs/$i.json');
+        songs.add(Song.fromJson(jsonDecode(jsonString)));
+      }
+      return songs;
+    } catch (e) {
+      log('Error loading songs, ${e}', error: e);
+      return [];
+    }
+  }
 }

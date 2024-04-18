@@ -22,4 +22,12 @@ class SongService extends GetxService {
       return null;
     }
   }
+
+  Future<List<Song>> getSongs() async {
+    if (_songService != null) {
+      return _songService!.getSongs();
+    } else {
+      return [];
+    }
+  }
 }

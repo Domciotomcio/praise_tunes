@@ -9,6 +9,7 @@ part of 'song.dart';
 _$SongImpl _$$SongImplFromJson(Map<String, dynamic> json) => _$SongImpl(
       id: json['id'] as String?,
       title: Map<String, String>.from(json['title'] as Map),
+      orgLanguage: json['orgLanguage'] as String,
       languages:
           (json['languages'] as List<dynamic>).map((e) => e as String).toList(),
       key: json['key'] == null
@@ -28,6 +29,7 @@ Map<String, dynamic> _$$SongImplToJson(_$SongImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
+      'orgLanguage': instance.orgLanguage,
       'languages': instance.languages,
       'key': instance.key,
       'capo': instance.capo,

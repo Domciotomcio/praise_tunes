@@ -22,6 +22,7 @@ Song _$SongFromJson(Map<String, dynamic> json) {
 mixin _$Song {
   String? get id => throw _privateConstructorUsedError;
   Map<String, String> get title => throw _privateConstructorUsedError;
+  String get orgLanguage => throw _privateConstructorUsedError;
   List<String> get languages => throw _privateConstructorUsedError;
   Chord? get key => throw _privateConstructorUsedError;
   int? get capo => throw _privateConstructorUsedError;
@@ -44,6 +45,7 @@ abstract class $SongCopyWith<$Res> {
   $Res call(
       {String? id,
       Map<String, String> title,
+      String orgLanguage,
       List<String> languages,
       Chord? key,
       int? capo,
@@ -71,6 +73,7 @@ class _$SongCopyWithImpl<$Res, $Val extends Song>
   $Res call({
     Object? id = freezed,
     Object? title = null,
+    Object? orgLanguage = null,
     Object? languages = null,
     Object? key = freezed,
     Object? capo = freezed,
@@ -89,6 +92,10 @@ class _$SongCopyWithImpl<$Res, $Val extends Song>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as Map<String, String>,
+      orgLanguage: null == orgLanguage
+          ? _value.orgLanguage
+          : orgLanguage // ignore: cast_nullable_to_non_nullable
+              as String,
       languages: null == languages
           ? _value.languages
           : languages // ignore: cast_nullable_to_non_nullable
@@ -147,6 +154,7 @@ abstract class _$$SongImplCopyWith<$Res> implements $SongCopyWith<$Res> {
   $Res call(
       {String? id,
       Map<String, String> title,
+      String orgLanguage,
       List<String> languages,
       Chord? key,
       int? capo,
@@ -172,6 +180,7 @@ class __$$SongImplCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? title = null,
+    Object? orgLanguage = null,
     Object? languages = null,
     Object? key = freezed,
     Object? capo = freezed,
@@ -190,6 +199,10 @@ class __$$SongImplCopyWithImpl<$Res>
           ? _value._title
           : title // ignore: cast_nullable_to_non_nullable
               as Map<String, String>,
+      orgLanguage: null == orgLanguage
+          ? _value.orgLanguage
+          : orgLanguage // ignore: cast_nullable_to_non_nullable
+              as String,
       languages: null == languages
           ? _value._languages
           : languages // ignore: cast_nullable_to_non_nullable
@@ -232,6 +245,7 @@ class _$SongImpl with DiagnosticableTreeMixin implements _Song {
   const _$SongImpl(
       {this.id,
       required final Map<String, String> title,
+      required this.orgLanguage,
       required final List<String> languages,
       this.key,
       this.capo,
@@ -257,6 +271,8 @@ class _$SongImpl with DiagnosticableTreeMixin implements _Song {
     return EqualUnmodifiableMapView(_title);
   }
 
+  @override
+  final String orgLanguage;
   final List<String> _languages;
   @override
   List<String> get languages {
@@ -287,7 +303,7 @@ class _$SongImpl with DiagnosticableTreeMixin implements _Song {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Song(id: $id, title: $title, languages: $languages, key: $key, capo: $capo, artist: $artist, tempo: $tempo, bpm: $bpm, songbookNumber: $songbookNumber, sections: $sections)';
+    return 'Song(id: $id, title: $title, orgLanguage: $orgLanguage, languages: $languages, key: $key, capo: $capo, artist: $artist, tempo: $tempo, bpm: $bpm, songbookNumber: $songbookNumber, sections: $sections)';
   }
 
   @override
@@ -297,6 +313,7 @@ class _$SongImpl with DiagnosticableTreeMixin implements _Song {
       ..add(DiagnosticsProperty('type', 'Song'))
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('title', title))
+      ..add(DiagnosticsProperty('orgLanguage', orgLanguage))
       ..add(DiagnosticsProperty('languages', languages))
       ..add(DiagnosticsProperty('key', key))
       ..add(DiagnosticsProperty('capo', capo))
@@ -314,6 +331,8 @@ class _$SongImpl with DiagnosticableTreeMixin implements _Song {
             other is _$SongImpl &&
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._title, _title) &&
+            (identical(other.orgLanguage, orgLanguage) ||
+                other.orgLanguage == orgLanguage) &&
             const DeepCollectionEquality()
                 .equals(other._languages, _languages) &&
             (identical(other.key, key) || other.key == key) &&
@@ -332,6 +351,7 @@ class _$SongImpl with DiagnosticableTreeMixin implements _Song {
       runtimeType,
       id,
       const DeepCollectionEquality().hash(_title),
+      orgLanguage,
       const DeepCollectionEquality().hash(_languages),
       key,
       capo,
@@ -359,6 +379,7 @@ abstract class _Song implements Song {
   const factory _Song(
       {final String? id,
       required final Map<String, String> title,
+      required final String orgLanguage,
       required final List<String> languages,
       final Chord? key,
       final int? capo,
@@ -374,6 +395,8 @@ abstract class _Song implements Song {
   String? get id;
   @override
   Map<String, String> get title;
+  @override
+  String get orgLanguage;
   @override
   List<String> get languages;
   @override

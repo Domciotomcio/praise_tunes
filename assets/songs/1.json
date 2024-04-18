@@ -1,6 +1,7 @@
 {
     "id": "1",
-    "songBookNumber": 1,
+    "songbookNumber": 1,
+    "orgLanguage": "pl_PL",
     "title": {"pl_PL": "Przyjdź, dotknij mnie"},
     "languages": ["pl_PL"],
     "sections": [

@@ -1,6 +1,7 @@
 {
     "id": "2",
-    "songBookNumber": 2,
+    "songbookNumber": 2,
+    "orgLanguage": "pl_PL",
     "title": {"pl_PL": "Chcę wywyższać Imię Twe"},
     "languages": ["pl_PL"],
     "capo": 1,

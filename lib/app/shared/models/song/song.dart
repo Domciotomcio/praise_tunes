@@ -12,6 +12,7 @@ class Song with _$Song {
   const factory Song({
     String? id,
     required Map<String, String> title,
+    required String orgLanguage,
     required List<String> languages,
     Chord? key,
     int? capo,
@@ -22,8 +23,11 @@ class Song with _$Song {
     required List<Section> sections,
   }) = _Song;
 
-  factory Song.empty() =>
-      Song(title: {'en_US': ''}, languages: ['en_US'], sections: []);
+  factory Song.empty() => Song(
+      title: {'en_US': ''},
+      languages: ['en_US'],
+      orgLanguage: 'en_US',
+      sections: []);
 
   // Factory method to create a new instance of Song with a specified ID
   factory Song.withId(String id, Song song) => song.copyWith(id: id);

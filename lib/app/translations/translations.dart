@@ -27,6 +27,19 @@ class Messages extends Translations {
         },
         'pl': {
           'hello': 'Witaj świecie',
+
+          // SongListView
+          'SongListView': 'Lista piosenek',
+
+          // Session
+          'SessionView': 'Sesja',
+          'actual song': 'Aktualna piosenka',
+          'songs list': 'Lista piosenek',
+          'add song': 'Dodaj piosenkę',
+          'next song': 'Następna',
+
+          // SessionInfo
+          'SessionInfoView': 'Informacje o sesji',
         },
         'ru': {
           'hello': 'Привет, мир',
