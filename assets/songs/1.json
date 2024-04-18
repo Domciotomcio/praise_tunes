@@ -1,0 +1,37 @@
+{
+    "id": "1",
+    "songBookNumber": 1,
+    "title": "Przyjdź, dotknij mnie",
+    "sections": [
+        {
+            "header": "Verse 1",
+            "lyrics": {
+                "pl_PL": [
+                    "Przyjdź, dotknij mnie,",
+                    "pragnę Twej mocy",
+                    "przyjdź, dotknij mnie"
+                ]
+            },
+            "chords": [
+                [{"value": "E", "key": "E", "isMinor": false}, {"value": "B", "key": "B", "isMinor": false}],
+                [{"value": "C#", "key": "C#", "isMinor": true}],
+                [{"value": "A", "key": "A", "isMinor": false}]
+            ]
+        },
+        {
+            "header": "Refren",
+            "lyrics": {
+                "pl_PL": [
+                    "Wszystko, co mam,",
+                    "pragnę Tobie dać",
+                    "mój Zbawco, Panie i Zbawco"
+                ]
+            },
+            "chords": [
+                [{"value": "A", "key": "A", "isMinor": false}],
+                [{"value": "E", "key": "E", "isMinor": false}],
+                [{"value": "B", "key": "B", "isMinor": false}]
+            ]
+        }
+    ]     
+}

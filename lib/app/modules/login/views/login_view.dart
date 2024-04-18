@@ -26,7 +26,9 @@ class LoginView extends GetView<LoginController> {
                 'LoginView is working',
                 style: TextStyle(fontSize: 20),
               ),
-              ElevatedButton(onPressed: null, child: Text('Login')),
+              ElevatedButton(
+                  onPressed: () => Get.toNamed('/song'),
+                  child: Text('Go to Song')),
               ElevatedButton(onPressed: null, child: Text('Sign Up')),
               ElevatedButton(onPressed: null, child: Text('Sign Up')),
             ],
