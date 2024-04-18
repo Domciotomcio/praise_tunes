@@ -1,7 +1,8 @@
 {
     "id": "1",
     "songBookNumber": 1,
-    "title": "Przyjdź, dotknij mnie",
+    "title": {"pl_PL": "Przyjdź, dotknij mnie"},
+    "languages": ["pl_PL"],
     "sections": [
         {
             "header": "Verse 1",

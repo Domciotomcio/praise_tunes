@@ -8,10 +8,14 @@ part of 'song.dart';
 
 _$SongImpl _$$SongImplFromJson(Map<String, dynamic> json) => _$SongImpl(
       id: json['id'] as String?,
-      title: json['title'] as String,
-      key: json['key'] as String?,
+      title: Map<String, String>.from(json['title'] as Map),
+      languages:
+          (json['languages'] as List<dynamic>).map((e) => e as String).toList(),
+      key: json['key'] == null
+          ? null
+          : Chord.fromJson(json['key'] as Map<String, dynamic>),
+      capo: json['capo'] as int?,
       artist: json['artist'] as String?,
-      language: json['language'] as String?,
       tempo: json['tempo'] as String?,
       bpm: json['bpm'] as String?,
       songbookNumber: json['songbookNumber'] as int?,
@@ -24,9 +28,10 @@ Map<String, dynamic> _$$SongImplToJson(_$SongImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
+      'languages': instance.languages,
       'key': instance.key,
+      'capo': instance.capo,
       'artist': instance.artist,
-      'language': instance.language,
       'tempo': instance.tempo,
       'bpm': instance.bpm,
       'songbookNumber': instance.songbookNumber,

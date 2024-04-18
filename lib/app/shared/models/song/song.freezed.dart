@@ -21,10 +21,11 @@ Song _$SongFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Song {
   String? get id => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
-  String? get key => throw _privateConstructorUsedError;
+  Map<String, String> get title => throw _privateConstructorUsedError;
+  List<String> get languages => throw _privateConstructorUsedError;
+  Chord? get key => throw _privateConstructorUsedError;
+  int? get capo => throw _privateConstructorUsedError;
   String? get artist => throw _privateConstructorUsedError;
-  String? get language => throw _privateConstructorUsedError;
   String? get tempo => throw _privateConstructorUsedError;
   String? get bpm => throw _privateConstructorUsedError;
   int? get songbookNumber => throw _privateConstructorUsedError;
@@ -42,14 +43,17 @@ abstract class $SongCopyWith<$Res> {
   @useResult
   $Res call(
       {String? id,
-      String title,
-      String? key,
+      Map<String, String> title,
+      List<String> languages,
+      Chord? key,
+      int? capo,
       String? artist,
-      String? language,
       String? tempo,
       String? bpm,
       int? songbookNumber,
       List<Section> sections});
+
+  $ChordCopyWith<$Res>? get key;
 }
 
 /// @nodoc
@@ -67,9 +71,10 @@ class _$SongCopyWithImpl<$Res, $Val extends Song>
   $Res call({
     Object? id = freezed,
     Object? title = null,
+    Object? languages = null,
     Object? key = freezed,
+    Object? capo = freezed,
     Object? artist = freezed,
-    Object? language = freezed,
     Object? tempo = freezed,
     Object? bpm = freezed,
     Object? songbookNumber = freezed,
@@ -83,18 +88,22 @@ class _$SongCopyWithImpl<$Res, $Val extends Song>
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Map<String, String>,
+      languages: null == languages
+          ? _value.languages
+          : languages // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       key: freezed == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as Chord?,
+      capo: freezed == capo
+          ? _value.capo
+          : capo // ignore: cast_nullable_to_non_nullable
+              as int?,
       artist: freezed == artist
           ? _value.artist
           : artist // ignore: cast_nullable_to_non_nullable
-              as String?,
-      language: freezed == language
-          ? _value.language
-          : language // ignore: cast_nullable_to_non_nullable
               as String?,
       tempo: freezed == tempo
           ? _value.tempo
@@ -114,6 +123,18 @@ class _$SongCopyWithImpl<$Res, $Val extends Song>
               as List<Section>,
     ) as $Val);
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ChordCopyWith<$Res>? get key {
+    if (_value.key == null) {
+      return null;
+    }
+
+    return $ChordCopyWith<$Res>(_value.key!, (value) {
+      return _then(_value.copyWith(key: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -125,14 +146,18 @@ abstract class _$$SongImplCopyWith<$Res> implements $SongCopyWith<$Res> {
   @useResult
   $Res call(
       {String? id,
-      String title,
-      String? key,
+      Map<String, String> title,
+      List<String> languages,
+      Chord? key,
+      int? capo,
       String? artist,
-      String? language,
       String? tempo,
       String? bpm,
       int? songbookNumber,
       List<Section> sections});
+
+  @override
+  $ChordCopyWith<$Res>? get key;
 }
 
 /// @nodoc
@@ -147,9 +172,10 @@ class __$$SongImplCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? title = null,
+    Object? languages = null,
     Object? key = freezed,
+    Object? capo = freezed,
     Object? artist = freezed,
-    Object? language = freezed,
     Object? tempo = freezed,
     Object? bpm = freezed,
     Object? songbookNumber = freezed,
@@ -161,20 +187,24 @@ class __$$SongImplCopyWithImpl<$Res>
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       title: null == title
-          ? _value.title
+          ? _value._title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Map<String, String>,
+      languages: null == languages
+          ? _value._languages
+          : languages // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       key: freezed == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as Chord?,
+      capo: freezed == capo
+          ? _value.capo
+          : capo // ignore: cast_nullable_to_non_nullable
+              as int?,
       artist: freezed == artist
           ? _value.artist
           : artist // ignore: cast_nullable_to_non_nullable
-              as String?,
-      language: freezed == language
-          ? _value.language
-          : language // ignore: cast_nullable_to_non_nullable
               as String?,
       tempo: freezed == tempo
           ? _value.tempo
@@ -201,29 +231,46 @@ class __$$SongImplCopyWithImpl<$Res>
 class _$SongImpl with DiagnosticableTreeMixin implements _Song {
   const _$SongImpl(
       {this.id,
-      required this.title,
+      required final Map<String, String> title,
+      required final List<String> languages,
       this.key,
+      this.capo,
       this.artist,
-      this.language,
       this.tempo,
       this.bpm,
       this.songbookNumber,
       required final List<Section> sections})
-      : _sections = sections;
+      : _title = title,
+        _languages = languages,
+        _sections = sections;
 
   factory _$SongImpl.fromJson(Map<String, dynamic> json) =>
       _$$SongImplFromJson(json);
 
   @override
   final String? id;
+  final Map<String, String> _title;
   @override
-  final String title;
+  Map<String, String> get title {
+    if (_title is EqualUnmodifiableMapView) return _title;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_title);
+  }
+
+  final List<String> _languages;
   @override
-  final String? key;
+  List<String> get languages {
+    if (_languages is EqualUnmodifiableListView) return _languages;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_languages);
+  }
+
+  @override
+  final Chord? key;
+  @override
+  final int? capo;
   @override
   final String? artist;
-  @override
-  final String? language;
   @override
   final String? tempo;
   @override
@@ -240,7 +287,7 @@ class _$SongImpl with DiagnosticableTreeMixin implements _Song {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Song(id: $id, title: $title, key: $key, artist: $artist, language: $language, tempo: $tempo, bpm: $bpm, songbookNumber: $songbookNumber, sections: $sections)';
+    return 'Song(id: $id, title: $title, languages: $languages, key: $key, capo: $capo, artist: $artist, tempo: $tempo, bpm: $bpm, songbookNumber: $songbookNumber, sections: $sections)';
   }
 
   @override
@@ -250,9 +297,10 @@ class _$SongImpl with DiagnosticableTreeMixin implements _Song {
       ..add(DiagnosticsProperty('type', 'Song'))
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('title', title))
+      ..add(DiagnosticsProperty('languages', languages))
       ..add(DiagnosticsProperty('key', key))
+      ..add(DiagnosticsProperty('capo', capo))
       ..add(DiagnosticsProperty('artist', artist))
-      ..add(DiagnosticsProperty('language', language))
       ..add(DiagnosticsProperty('tempo', tempo))
       ..add(DiagnosticsProperty('bpm', bpm))
       ..add(DiagnosticsProperty('songbookNumber', songbookNumber))
@@ -265,11 +313,12 @@ class _$SongImpl with DiagnosticableTreeMixin implements _Song {
         (other.runtimeType == runtimeType &&
             other is _$SongImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.title, title) || other.title == title) &&
+            const DeepCollectionEquality().equals(other._title, _title) &&
+            const DeepCollectionEquality()
+                .equals(other._languages, _languages) &&
             (identical(other.key, key) || other.key == key) &&
+            (identical(other.capo, capo) || other.capo == capo) &&
             (identical(other.artist, artist) || other.artist == artist) &&
-            (identical(other.language, language) ||
-                other.language == language) &&
             (identical(other.tempo, tempo) || other.tempo == tempo) &&
             (identical(other.bpm, bpm) || other.bpm == bpm) &&
             (identical(other.songbookNumber, songbookNumber) ||
@@ -282,10 +331,11 @@ class _$SongImpl with DiagnosticableTreeMixin implements _Song {
   int get hashCode => Object.hash(
       runtimeType,
       id,
-      title,
+      const DeepCollectionEquality().hash(_title),
+      const DeepCollectionEquality().hash(_languages),
       key,
+      capo,
       artist,
-      language,
       tempo,
       bpm,
       songbookNumber,
@@ -308,10 +358,11 @@ class _$SongImpl with DiagnosticableTreeMixin implements _Song {
 abstract class _Song implements Song {
   const factory _Song(
       {final String? id,
-      required final String title,
-      final String? key,
+      required final Map<String, String> title,
+      required final List<String> languages,
+      final Chord? key,
+      final int? capo,
       final String? artist,
-      final String? language,
       final String? tempo,
       final String? bpm,
       final int? songbookNumber,
@@ -322,13 +373,15 @@ abstract class _Song implements Song {
   @override
   String? get id;
   @override
-  String get title;
+  Map<String, String> get title;
   @override
-  String? get key;
+  List<String> get languages;
+  @override
+  Chord? get key;
+  @override
+  int? get capo;
   @override
   String? get artist;
-  @override
-  String? get language;
   @override
   String? get tempo;
   @override

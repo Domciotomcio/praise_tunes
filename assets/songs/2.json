@@ -1,0 +1,42 @@
+{
+    "id": "2",
+    "songBookNumber": 2,
+    "title": {"pl_PL": "Chcę wywyższać Imię Twe"},
+    "languages": ["pl_PL"],
+    "capo": 1,
+    "key": {"value": "E", "key": "E", "isMinor": false},
+    "sections": [
+        {
+            "header": "Verse 1",
+            "lyrics": {
+                "pl_PL": [
+                    "Chcę wywyższać Imię Twe,",
+                    "Chcę zaśpiewać Tobie chwałę",
+                    "Panie dziś raduję się,",
+                    "Bo przyszedłeś, by mnie zbawić"
+                ]
+            },
+            "chords": [
+                [{"value": "E", "key": "E", "isMinor": false}, {"value": "A", "key": "A", "isMinor": false}, {"value": "B", "key": "B", "isMinor": false}],
+                [],
+                [],
+                [{"value": "E", "key": "E", "isMinor": false}, {"value": "A", "key": "A", "isMinor": false}, {"value": "B", "key": "B", "isMinor": false}, {"value": "A", "key": "A", "isMinor": false}]
+            ]
+        },
+        {
+            "header": "Refren",
+            "lyrics": {
+                "pl_PL": [
+                    "Z nieba zstąpiłeś i chcesz prowadzić mnie,",
+                    "Na krzyżu zmarłeś, by mój zapłacić dług",
+                    "Z grobu wstałeś i dziś nieba Król jesteś Ty",
+                    "Chcę wywyższać Imię Twe"
+                ]
+            },
+            "chords": [
+                [{"value": "E", "key": "E", "isMinor": false}, {"value": "A", "key": "A", "isMinor": false}, {"value": "B", "key": "B", "isMinor": false}, {"value": "G#", "key": "G#", "isMinor": false}, {"value": "C#", "key": "C#", "isMinor": true}],
+                [{"value": "F#", "key": "F#", "isMinor": true}, {"value": "B", "key": "B", "isMinor": false}, {"value": "E", "key": "E", "isMinor": false}]
+            ]
+        }
+    ]     
+}
