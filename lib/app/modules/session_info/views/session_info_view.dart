@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -15,16 +17,22 @@ class SessionInfoView extends GetView<SessionInfoController> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Sesja'),
-            Divider(),
-            Text('INFO O SESJI'),
-            Divider(),
-            Text("PODLACZENI UZYTKOWNICY")
-          ],
-        ),
+        child: Obx(() => Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Sesja'),
+                Divider(),
+                Text('INFO O SESJI'),
+                Divider(),
+                Text("SessionUsers", style: context.textTheme.labelMedium),
+                for (var user in controller.users)
+                  ListTile(
+                    title: Text(user.name),
+                    subtitle: Text(user.instrument ?? '',
+                        style: TextStyle(fontStyle: FontStyle.italic)),
+                  ),
+              ],
+            )),
       ),
     );
   }

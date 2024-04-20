@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "name": "Dominik",
+        "instrument": "pianino"
+    },
+    {
+        "id": "2",
+        "name": "Kamil",
+        "instrument": "gitara"
+    },
+    {
+        "id": "3",
+        "name": "Agata",
+        "instrument": "perkusja"
+    },
+    {
+        "id": "4",
+        "name": "Piotr"
+    },
+    {
+        "id": "5",
+        "name": "Tomasz",
+        "instrument": "bas"
+    }
+]

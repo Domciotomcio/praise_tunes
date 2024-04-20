@@ -1,11 +1,17 @@
 import 'package:get/get.dart';
+import 'package:praise_tunes/app/shared/services/session/session_service.dart';
+
+import '../../../shared/models/session_user/session_user.dart';
 
 class SessionInfoController extends GetxController {
-  //TODO: Implement SessionInfoController
+  final sessionService = Get.find<SessionService>();
 
-  final count = 0.obs;
+  RxList<SessionUser> users = RxList.empty();
+
   @override
-  void onInit() {
+  Future<void> onInit() async {
+    users.addAll(await sessionService.getSessionUsers('id'));
+    print(users.length.toString());
     super.onInit();
   }
 
@@ -18,6 +24,4 @@ class SessionInfoController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

@@ -40,6 +40,7 @@ class Messages extends Translations {
 
           // SessionInfo
           'SessionInfoView': 'Informacje o sesji',
+          'SessionUsers': 'Podłączeni użytkownicy',
         },
         'ru': {
           'hello': 'Привет, мир',
